@@ -3,14 +3,14 @@ MAINTAINER Thishan D Pathmanathan <thishandp7@gmail.com>
 
 ENV TERM=xterm-256color
 
-RUN apt-get update $$ \
+RUN apt-get update && \
     apt-get install -y \
-    -o APT::Install-Recommended=false -o APT::Install-Suggests=false \
-    python python-virtualenv
+    -o APT::Install-Recommend=false -o APT::Install-Suggests=false \
+    python3 python3-pip python3.4-venv
 
-RUN virtualenv /appenv && \
+RUN python3 -m venv /appenv && \
     . /appenv/bin/activate && \
-    pip install pip --upgrade
+    pip3 install --upgrade pip
 
 ADD scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
 
