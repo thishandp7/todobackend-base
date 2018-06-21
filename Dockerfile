@@ -6,7 +6,7 @@ ENV TERM=xterm-256color
 RUN apt-get update && \
     apt-get install -y \
     -o APT::Install-Recommend=false -o APT::Install-Suggests=false \
-    python3 python3-pip python3.4-venv
+    python3 python3-pip python3.4-venv libpython2.7 python-mysqldb
 
 RUN python3 -m venv /appenv && \
     . /appenv/bin/activate && \
