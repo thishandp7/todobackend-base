@@ -5,7 +5,7 @@ ENV TERM=xterm-256color
 
 ARG DOCKER_GID=497
 
-RUN groupadd -g ${DOCKER_GID}:-497} docker
+RUN groupadd -g ${DOCKER_GID:-497} docker
 
 RUN apt-get update && \
     apt-get install -y \
