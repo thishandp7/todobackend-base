@@ -3,6 +3,8 @@ MAINTAINER Thishan D Pathmanathan <thishandp7@gmail.com>
 
 ENV TERM=xterm-256color
 
+USER root
+
 ARG DOCKER_GID=497
 
 RUN groupadd -g ${DOCKER_GID:-497} docker
