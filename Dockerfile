@@ -3,6 +3,8 @@ MAINTAINER Thishan D Pathmanathan <thishandp7@gmail.com>
 
 ENV TERM=xterm-256color
 
+ARG DOCKER_GID=497
+
 RUN apt-get update && \
     apt-get install -y \
     -o APT::Install-Recommend=false -o APT::Install-Suggests=false \
